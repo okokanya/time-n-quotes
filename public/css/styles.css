@@ -15,8 +15,31 @@ main {
   color: var(--font-color);
   min-height: 100vh;
   min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
+.main {
+  min-width: 1000px;
+  min-height: 500px;
+  max-height: 700px;
+  border: 1px solid red;
+  background-image: url("/src/light-lamp.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+
+.logo-block {
+  display: flex;
+  align-items: center;
+}
+
+h1 {
+  font-size: 36px;
+}
 .toggle-theme {
   display: block;
   width: 30px;
