@@ -1,0 +1,8 @@
+.dark{
+  --font-color: rgb(255, 255, 255);
+  --main-color: rgb(0, 0, 0);
+}
+
+.dark .toggle-theme {
+  background-image: url("data:image/svg+xml,%3Csvg fill='none' height='30' viewBox='0 0 30 30' width='30' xmlns='http://www.w3.org/2000/svg' xmlns:xlink='http://www.w3.org/1999/xlink'%3E%3CclipPath id='a'%3E%3Cpath d='m0 0h30v30h-30z'/%3E%3C/clipPath%3E%3Cg clip-path='url(%23a)' stroke='white' stroke-linecap='round' stroke-linejoin='round' stroke-width='2'%3E%3Cpath d='m15 21.25c3.4518 0 6.25-2.7982 6.25-6.25s-2.7982-6.25-6.25-6.25-6.25 2.7982-6.25 6.25 2.7982 6.25 6.25 6.25z'/%3E%3Cpath d='m15 1.25v2.5'/%3E%3Cpath d='m15 26.25v2.5'/%3E%3Cpath d='m5.27539 5.27502 1.775 1.775'/%3E%3Cpath d='m22.9492 22.95 1.775 1.775'/%3E%3Cpath d='m1.25 15h2.5'/%3E%3Cpath d='m26.25 15h2.5'/%3E%3Cpath d='m5.27539 24.725 1.775-1.775'/%3E%3Cpath d='m22.9492 7.05002 1.775-1.775'/%3E%3C/g%3E%3C/svg%3E");
+}
