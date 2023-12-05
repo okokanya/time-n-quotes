@@ -21,7 +21,7 @@ main {
 }
 
 .main {
-  min-width: 900px;
+  width: 900px;
   min-height: 500px;
   max-height: 700px;
   /* border: 1px solid red; */
@@ -66,6 +66,7 @@ h1 {
 .current-time {
   font-style: normal;
   font-weight: 600;
+  outline: 2px solid red;
 }
 
 .quote-block--author {
