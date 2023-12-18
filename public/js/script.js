@@ -1,0 +1,2 @@
+"use strict";
+"use strict";var main=document.querySelector("main"),toggleButton=document.querySelector(".toggle-theme");function changeTheme(){main.classList.toggle("dark"),console.log("gu")}toggleButton.addEventListener("click",changeTheme);
