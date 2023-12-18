@@ -7,7 +7,7 @@
   "scripts": {
     "test": "echo \"This command will run tests\" && exit 1",
     "start": "node app.js",
-    "start-dev" : "nodemon app.js",
+    "start-dev": "nodemon app.js",
     "build": "echo \"Here we will build the application\" && exit 1"
   },
   "repository": {
@@ -25,6 +25,18 @@
     "express": "^4.18.2"
   },
   "devDependencies": {
-    "nodemon": "^3.0.1"
+    "@babel/preset-env": "^7.23.6",
+    "autoprefixer": "^10.4.16",
+    "gulp": "^4.0.2",
+    "gulp-babel": "^8.0.0",
+    "gulp-concat": "^2.6.1",
+    "gulp-htmlmin": "^5.0.1",
+    "gulp-postcss": "^9.0.1",
+    "gulp-replace": "^1.1.4",
+    "gulp-terser": "^2.1.0",
+    "nodemon": "^3.0.1",
+    "postcss-csso": "^6.0.1",
+    "postcss-import": "^15.1.0",
+    "postcss-media-minmax": "^5.0.0"
   }
 }

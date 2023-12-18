@@ -1,0 +1,107 @@
+@import './dark.css';
+* {
+  margin: 0;
+  padding: 0;
+  transition: 0.1s;
+  box-sizing: border-box;
+}
+
+:root {
+  --font-color: rgb(0, 0, 0);
+  --main-color: rgb(255, 255, 255);
+  font-family: 'Montserrat', sans-serif;
+}
+
+
+main {
+  background-color: var(--main-color);
+  color: var(--font-color);
+  min-height: 100vh;
+  min-width: 100vw;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.main {
+  width: 900px;
+  min-height: 500px;
+  max-height: 700px;
+  background-image: url("../img/light-lamp.png");
+  background-repeat: no-repeat;
+  background-position: right;
+  background-size: contain;
+}
+
+
+.logo-block {
+  display: flex;
+  align-items: center;
+  margin-bottom: 50px;
+}
+
+h1 {
+  font-size: clamp(24px, 3vw, 36px);
+}
+
+.toggle-theme {
+  display: block;
+  width: 30px;
+  height: 30px;
+  border-radius: 50%;
+  background-size: 70%;
+  border: 1px solid var(--font-color);
+  background-image: url("data:image/svg+xml,%3Csvg width='20' height='20' viewBox='0 0 20 20' fill='none' xmlns='http://www.w3.org/2000/svg'%3E%3Cpath d='M18.9618 10.79C18.8045 12.4922 18.1657 14.1144 17.1201 15.4668C16.0744 16.8192 14.6653 17.8458 13.0575 18.4265C11.4497 19.0073 9.7098 19.1181 8.04132 18.7461C6.37283 18.3741 4.84481 17.5345 3.63604 16.3258C2.42727 15.117 1.58775 13.589 1.21572 11.9205C0.843691 10.252 0.954531 8.51208 1.53528 6.9043C2.11602 5.29651 3.14265 3.88737 4.49503 2.84175C5.84741 1.79614 7.46961 1.15731 9.17182 1C8.17523 2.34827 7.69566 4.00945 7.82035 5.68141C7.94503 7.35338 8.66568 8.92506 9.85122 10.1106C11.0368 11.2961 12.6084 12.0168 14.2804 12.1415C15.9524 12.2662 17.6135 11.7866 18.9618 10.79Z' stroke='black' stroke-width='2' stroke-linecap='round' stroke-linejoin='round'/%3E%3C/svg%3E%0A");
+  background-position: center center;
+  background-repeat: no-repeat;
+  cursor: pointer;
+}
+
+.toggle-theme:hover{
+  background-size: 75%;
+  box-shadow: rgb(255, 255, 255) 0px 0px 4px;
+}
+
+.quote-block {
+  max-width: 70%;
+  font-size: 24px;
+}
+
+.quote-block--item {
+  margin-bottom: 40px;
+  font-style: italic;
+  font-weight: 200;
+}
+.current-time {
+  font-style: normal;
+  font-weight: 600;
+  outline: 2px solid red;
+}
+
+.quote-block--author {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+.quote-block--source {
+  font-size: 18px;
+  margin-bottom: 10px;
+}
+
+@media screen and (max-width: 600px) {
+  .main {
+    width: 100%;
+    min-height: 100vw;
+    padding: 0 10px;
+    background-position: top -40px right -120px;
+  }
+  svg {
+    width: 120px;
+  }
+
+  .quote-block {
+    width: 85%;
+    max-width: unset;
+    font-size: 18px;
+  }
+}
