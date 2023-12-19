@@ -20,15 +20,13 @@ export const html = () => {
 }
 
 export const styles = () => {
-    return gulp.src('src/css/*.css')
+    return gulp.src('src/css/styles.css')
         .pipe(postcss([
             pimport,
             minmax,
             autoprefixer,
             csso,
         ]))
-        .pipe(replace(/\.\.\//g, ''))
-        .pipe(concat('styles.css'))
         .pipe(gulp.dest('public/css'))
 };
 
