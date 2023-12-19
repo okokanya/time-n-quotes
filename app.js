@@ -8,6 +8,7 @@ const PORT = process.env.PORT || 8000;
 const __filename = fileURLToPath(import.meta.url);
 const __dirname = path.dirname(__filename);
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.static(path.join(__dirname, 'public/img')));
 
 app.get('/api', (req, resp) => {
     resp.status(200).send(sendQuote(req.query?.time));
