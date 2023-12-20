@@ -1,9 +1,5 @@
-let main = document.querySelector('main');
-let toggleButton = document.querySelector('.toggle-theme');
-
-
-function changeTheme() {
-  main.classList.toggle("dark");
-  console.log('gu')
+export const themeToggler = (main, toggleButton) => {
+  toggleButton.addEventListener('click', () => {
+    main.classList.toggle("dark");
+  });
 }
-toggleButton.addEventListener('click', changeTheme);
