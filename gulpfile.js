@@ -1,10 +1,12 @@
 import gulp from 'gulp';
-import babel from 'gulp-babel';
-import concat from 'gulp-concat';
+import babelify from 'babelify';
+import browserify from 'browserify';
+import source from 'vinyl-source-stream';
+import buffer from 'vinyl-buffer';
+import sourcemaps from 'gulp-sourcemaps';
 import postcss from 'gulp-postcss';
 import replace from 'gulp-replace';
 import htmlmin from 'gulp-htmlmin';
-import terser from 'gulp-terser';
 import pimport from 'postcss-import';
 import minmax from 'postcss-media-minmax';
 import autoprefixer from 'autoprefixer';
@@ -21,23 +23,28 @@ export const html = () => {
 
 export const styles = () => {
     return gulp.src('src/css/styles.css')
+        .pipe(sourcemaps.init())
         .pipe(postcss([
             pimport,
             minmax,
             autoprefixer,
             csso,
         ]))
+        .pipe(sourcemaps.write('./'))
         .pipe(gulp.dest('public/css'))
 };
 
 export const scripts = () => {
-    return gulp.src('src/js/*.js')
-        .pipe(babel({
-            'presets': ['@babel/preset-env']
-        }))
-        .pipe(terser())
-        .pipe(concat('script.js'))
-        .pipe(gulp.dest('public/js'))
+    return browserify('src/js/script.js', { debug: true })
+    .transform(babelify)
+    .transform('@browserify/uglifyify', { global: true  })
+    .bundle()
+    .on('error', function(err) { console.error(err); this.emit('end'); })
+     .pipe(source('script.js'))
+      .pipe(buffer())
+      .pipe(sourcemaps.init({ loadMaps: true }))
+      .pipe(sourcemaps.write('./'))
+      .pipe(gulp.dest('./public/js'));
 };
 
 export const copy = () => {
@@ -52,7 +59,7 @@ export const copy = () => {
 export const paths = () => {
     return gulp.src('public/*.html')
         .pipe(replace(
-            /(<script src=".\/js\/toggle-theme.js" async><\/script>)/, ''
+            ' type="module"', ''
         ))
         .pipe(gulp.dest('public'));
 };
