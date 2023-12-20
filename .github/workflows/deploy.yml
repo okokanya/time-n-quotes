@@ -4,7 +4,7 @@ on:
   push:
     branches: [main]
 jobs:
-  build:
+  deploy:
     runs-on: ubuntu-latest
     steps:
     - name: executing remote ssh commands
@@ -20,5 +20,5 @@ jobs:
           git status
           export NVM_DIR=~/.nvm
           source ~/.nvm/nvm.sh
-          npm install --only=prod
+          npm ci
           pm2 restart app.js
