@@ -102,15 +102,17 @@ export default class TimeQuote  {
       if (fullHour > 1 && fullHour < 5) {
         timeHour += ` ${hours[1]}`
       }
-      if (fullHour > 5) {
+      if (fullHour === 0) {
         timeHour += ` ${hours[2]}`
       }
       timeHour += ` ${dayTime[0]}`
-    } else if (fullHour > 6 && fullHour < 12) {
+    } else if (fullHour > 5 && fullHour < 13) {
       timeHour += ` ${hours[2]} ${dayTime[1]}`
-    } else if (fullHour > 11 && fullHour < 18) {
-      timeHour += ` ${hours[2]} ${dayTime[2]}`
-    } else if (fullHour > 18) {
+    } else if (fullHour === 13) {
+      timeHour += ` ${dayTime[2]}`
+    } else if (fullHour > 13 && fullHour < 17) {
+      timeHour += ` ${hours[1]} ${dayTime[2]}`
+    } else if (fullHour > 16) {
       timeHour += ` ${hours[2]} ${dayTime[3]}`
     }
 
