@@ -37,6 +37,7 @@ class TimeQuote {
       let timeHour =
         date.getHours() > 12 ? date.getHours() - 12 : date.getHours()
       let timeMinutes = date.getMinutes()
+
       switch (timeHour) {
         case 1:
           timeHour = hour[0].replace(hour[0][0], hour[0][0].toUpperCase())
@@ -87,11 +88,13 @@ class TimeQuote {
           timeHour += ` ${hour[2]}`
         }
         timeHour += ` ${dayTime[0]}`
-      } else if (fullHour > 6 && fullHour < 12) {
+      } else if (fullHour > 5 && fullHour < 13) {
         timeHour += ` ${hour[2]} ${dayTime[1]}`
-      } else if (fullHour > 11 && fullHour < 18) {
-        timeHour += ` ${hour[2]} ${dayTime[2]}`
-      } else if (fullHour > 18) {
+      } else if (fullHour === 13) {
+        timeHour += ` ${dayTime[2]}`
+      } else if (fullHour > 13 && fullHour < 17) {
+        timeHour += ` ${hour[1]} ${dayTime[2]}`
+      } else if (fullHour > 16) {
         timeHour += ` ${hour[2]} ${dayTime[3]}`
       }
 
