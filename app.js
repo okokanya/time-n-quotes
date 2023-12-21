@@ -29,3 +29,5 @@ app.use(function(err, req, res, next){
 app.listen(PORT, () => {
     console.log(`Server is running on PORT ${PORT}`);
 });
+
+export default server = app;
