@@ -57,6 +57,9 @@ export default class TimeQuote  {
     let timeHour = hour > 12 ? hour - 12 : hour;
     let timeMinutes = min;
     switch (timeHour) {
+      case 0:
+        timeHour = 'Двенадцать'
+        break
       case 1:
         timeHour = hours[0].replace(hours[0][0], hours[0][0].toUpperCase())
         break
